@@ -43,4 +43,52 @@ z = x
 print(x is z)
 # returns True because z is the same object as x
 print(x is y)
-# returns False because x is not the same object as y, even if they have the same content
+# returns False because x is not the same object as y, 
+# even if they have the same content
+thistuple = ("apple",)
+print(type(thistuple))
+# Receive a tuple
+def my_function(*kids):
+  print(kids)
+  print("The youngest child is " + kids[2])
+my_function("Emil", "Tobias", "Linus")
+#receive a dictionary
+def my_function(**kid):
+  print("His last name is " + kid["lname"])
+my_function(fname = "Tobias", lname = "Refsnes")
+# None-local
+def myfunc1():
+  x = "Jane"
+  def myfunc2():
+    nonlocal x
+    x = "hello"
+  myfunc2()
+  return x
+
+print(myfunc1())
+
+# When importing using from keyword, do not use the module name when referring to the module
+
+with open('text.txt', 'r') as file:
+  lower_bits_lines = file.readlines() # return a list
+for i in lower_bits_lines:
+  print(i.strip()) # Remove any whitespace
+
+
+name = [ "Manjeet", "Nikhil", "Shambhavi", "Astha" ]
+roll_no = [ 4, 1, 3, 2 ]
+# using zip() to map values
+mapped = zip(name, roll_no) # zip type
+print(type(mapped))
+
+# iterate
+l1 = ["eat", "sleep", "repeat"]
+# printing the tuples in object directly
+for ele in enumerate(l1):
+    print (ele)
+for count, ele in enumerate(l1):
+    print(count)
+    print(ele)
+
+squares = [x**2 for x in range(10)]
+print(squares)
